@@ -79,7 +79,7 @@ export default class Game {
     window.addEventListener("resize", this.resize.bind(this));
     window.addEventListener("contextmenu", (e) => e.preventDefault());
     document.addEventListener("keydown", (e) => {
-      if (e.code === "Enter" || e.code === "Space") {
+      if (this.start && (e.code === "Enter" || e.code === "Space")) {
         this.start = false;
         this.canvas.requestFullscreen();
         this.player.init();
